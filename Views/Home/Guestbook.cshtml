@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = "Slam Book!";
+}
+
+<div class="journal-container">
+    <div class="journal-page">
+        <div class="page-header">
+            <h1 class="page-title">Slam Book!</h1>
+            <p class="page-subtitle">Leave your mark in my digital slambook! ✿</p>
+        </div>
+
+        <div class="content-section">
+            <p style="font-size: 1.1rem; text-align: center; margin-bottom: 2rem;">
+                Remember those slambooks we used to pass around? This is the digital version! 
+                Fill out the form below and share your thoughts with me. 💭
+            </p>
+        </div>
+
+        <form class="guestbook-form">
+            <div class="form-group">
+                <label class="form-label">What's your name? ✏️</label>
+                <input type="text" class="form-input" placeholder="Your name here..." />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Where are you from? 🌍</label>
+                <input type="text" class="form-input" placeholder="Your location..." />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">How did we meet? 🤝</label>
+                <input type="text" class="form-input" placeholder="Tell me how we know each other..." />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Favorite memory with me? 💭</label>
+                <textarea class="form-textarea" placeholder="Share a special moment we had together..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Describe me in 3 words 📝</label>
+                <input type="text" class="form-input" placeholder="Three words that describe me..." />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">If I were a song, what would I be? 🎵</label>
+                <input type="text" class="form-input" placeholder="A song that reminds you of me..." />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">What's your favorite thing about our friendship? 💕</label>
+                <textarea class="form-textarea" placeholder="What makes our friendship special..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Leave me a message! ✉️</label>
+                <textarea class="form-textarea" placeholder="Write anything you want to tell me..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Your favorite emoji? 😊</label>
+                <input type="text" class="form-input" placeholder="Drop your fave emoji here..." />
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button type="submit" class="submit-btn">Sign My Slam Book 🎀</button>
+            </div>
+        </form>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--pale-pink); border-radius: 8px;">
+            <p style="font-style: italic; color: var(--coquette-pink); font-size: 1.1rem;">
+                "Thank you for taking the time to fill this out! Your words mean the world to me." 💌
+            </p>
+            <p style="margin-top: 1rem; color: var(--coquette-pink);">
+                🎀 ✨ 🎀
+            </p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Simple form submission handler (front-end only)
+        document.querySelector('.guestbook-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for signing my guestbook! 💕\n\n(Note: This is a front-end demo, so entries are not actually saved.)');
+            this.reset();
+        });
+    </script>
+}

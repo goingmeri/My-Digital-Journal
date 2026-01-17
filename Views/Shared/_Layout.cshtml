@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mary's Safe Space</title>
+    <link rel="stylesheet" href="~/css/journal.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="journal-nav">
+        <div class="nav-container">
+            <a href="@Url.Action("Index", "Home")" class="journal-title">Mary's Safe Space</a>
+            <ul class="nav-links">
+                <li><a href="@Url.Action("Index", "Home")">Cover</a></li>
+                <li><a href="@Url.Action("About", "Home")">About Me</a></li>
+                <li><a href="@Url.Action("MyStory", "Home")">My Story</a></li>
+                <li><a href="@Url.Action("Favorites", "Home")">Favorites</a></li>
+                <li><a href="@Url.Action("Guestbook", "Home")">Guestbook</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="journal-footer">
+        <p>🎀 Made with love and softness by Mer 🎀</p>
+        <p>maryjean.pup@gmail.com</p>
+        <p>&copy; 2026 - All rights reserved</p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

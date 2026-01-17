@@ -1,0 +1,446 @@
+/* Soft Coquette Pink Theme - Digital Journal */
+:root {
+    --coquette-pink: #FFC0CB;
+    --light-pink: #FFE4E9;
+    --pale-pink: #FFF0F3;
+    --white: #FFFFFF;
+    --soft-text: #8B6B7A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--pale-pink);
+    background-attachment: fixed;
+    color: var(--soft-text);
+    line-height: 1.8;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 192, 203, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    animation: sparkle 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* Navigation */
+.journal-nav {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(255, 192, 203, 0.2);
+    border-bottom: 2px solid var(--coquette-pink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.journal-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+    color: var(--coquette-pink);
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(255, 192, 203, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    background: var(--light-pink);
+    color: var(--coquette-pink);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background: var(--coquette-pink);
+    color: white;
+}
+
+/* Main Container */
+.journal-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.journal-page {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 192, 203, 0.15);
+    position: relative;
+    margin-bottom: 2rem;
+    border: 1px solid var(--light-pink);
+}
+
+.journal-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 1px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--coquette-pink) 0px,
+        var(--coquette-pink) 2px,
+        transparent 2px,
+        transparent 40px
+    );
+    opacity: 0.2;
+}
+
+.journal-page::after {
+    content: '✨';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+/* Cover Page */
+.cover-page {
+    text-align: center;
+    padding: 5rem 3rem;
+    background: var(--white);
+    border: 3px solid var(--coquette-pink);
+    position: relative;
+    box-shadow: 0 4px 20px rgba(255, 192, 203, 0.2);
+}
+
+.cover-page::after {
+    content: '✨';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--coquette-pink);
+    opacity: 0.4;
+}
+
+.cover-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 4rem;
+    color: var(--coquette-pink);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255, 192, 203, 0.2);
+}
+
+.cover-subtitle {
+    font-size: 1.5rem;
+    color: var(--soft-text);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.cover-decoration {
+    font-size: 2rem;
+    color: var(--coquette-pink);
+    margin: 2rem 0;
+    opacity: 0.7;
+}
+
+/* Page Headers */
+.page-header {
+    border-bottom: 2px solid var(--light-pink);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.page-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.5rem;
+    color: var(--coquette-pink);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-style: italic;
+    color: var(--soft-text);
+    font-size: 1.1rem;
+}
+
+/* Polaroid Photo Frame */
+.polaroid-frame {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 192, 203, 0.2);
+    transform: rotate(-2deg);
+    display: inline-block;
+    margin: 2rem;
+    border: 2px solid var(--light-pink);
+}
+
+.polaroid-frame img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: var(--coquette-pink);
+}
+
+/* Content Sections */
+.content-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--pale-pink);
+    border-radius: 8px;
+    border-left: 3px solid var(--coquette-pink);
+}
+
+.section-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.8rem;
+    color: var(--coquette-pink);
+    margin-bottom: 1rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '✨';
+    position: absolute;
+    left: -3rem;
+    color: var(--coquette-pink);
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.timeline-year {
+    font-weight: bold;
+    color: var(--coquette-pink);
+    font-size: 1.2rem;
+}
+
+.timeline-content {
+    margin-top: 0.5rem;
+}
+
+/* Favorites Grid */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.favorite-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(255, 192, 203, 0.15);
+    border: 2px solid var(--light-pink);
+    transition: transform 0.3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(255, 192, 203, 0.25);
+    border-color: var(--coquette-pink);
+}
+
+.favorite-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.favorite-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.5rem;
+    color: var(--coquette-pink);
+    margin-bottom: 0.5rem;
+}
+
+.favorite-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.favorite-list li {
+    padding: 0.3rem 0;
+    color: var(--text-dark);
+}
+
+.favorite-list li::before {
+    content: '🎀 ';
+}
+
+/* Guestbook Form */
+.guestbook-form {
+    background: var(--pale-pink);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px dashed var(--coquette-pink);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.3rem;
+    color: var(--coquette-pink);
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--light-pink);
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--soft-text);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--coquette-pink);
+    box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.1);
+}
+
+.submit-btn {
+    background: var(--coquette-pink);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(255, 192, 203, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 192, 203, 0.4);
+}
+
+/* Decorative Elements */
+.doodle {
+    position: absolute;
+    opacity: 0.15;
+    font-size: 3rem;
+    color: var(--coquette-pink);
+}
+
+.coffee-stain {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 192, 203, 0.1) 0%, transparent 70%);
+}
+
+/* Footer */
+.journal-footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .journal-page {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cover-title {
+        font-size: 2.5rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .favorites-grid {
+        grid-template-columns: 1fr;
+    }
+}
