@@ -60,5 +60,7 @@ All styling is located in: wwwroot/css/journal.css
 This project is a design-focused showcase ✨
 
 Enjoy your cozy digital journal ☕📖
+
 Made with love, memories, and a little bit of nostalgia ♡(˶˃ᆺ˂˶)
+
 Love, Mer 💌
